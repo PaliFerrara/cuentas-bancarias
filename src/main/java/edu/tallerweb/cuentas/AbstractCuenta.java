@@ -1,12 +1,12 @@
 package edu.tallerweb.cuentas;
 
-public abstract class AbstractCuenta {	
+public abstract class AbstractCuenta {
 	private Double saldo = 0.0;
-	private Double monto;
-	
+	private Double monto = 0.0;
+
 	public abstract void depositar(final Double monto);
 	public abstract void extraer(final Double monto);
-	
+
 	public Double getSaldo() {
 		return saldo;
 	}
