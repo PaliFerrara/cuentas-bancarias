@@ -19,8 +19,7 @@ public class CajaAhorros extends AbstractCuenta {
 
 		if	(monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-		}
-		else {
+	    } else {
 		this.setSaldo(this.getSaldo() + monto);
 		}
 	}
@@ -34,11 +33,10 @@ public class CajaAhorros extends AbstractCuenta {
 		if (monto > this.getSaldo() || monto < 0.0) {
 
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-		}
-		else {
+		} else {
 
 			extraccionNumero++;
-		if (extraccionNumero > extraccionNumeroMaximo) {
+		if (extraccionNumero > extraccionNumeroMaximo ) {
 			this.setSaldo(this.getSaldo() - costoExtraccion);
 		}
 		this.setSaldo(this.getSaldo() - monto);

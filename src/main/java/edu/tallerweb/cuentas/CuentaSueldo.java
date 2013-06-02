@@ -11,8 +11,7 @@ public class CuentaSueldo extends AbstractCuenta {
 
 		if	(monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-		}
-		else {
+		} else {
 		this.setSaldo(this.getSaldo() + monto);
 		}
 	}
@@ -22,8 +21,7 @@ public class CuentaSueldo extends AbstractCuenta {
 		if (monto > this.getSaldo() || monto < 0.0) {
 
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-		}
-		else {
+		} else {
 			this.setSaldo(this.getSaldo() - monto);
 		}
 	}
