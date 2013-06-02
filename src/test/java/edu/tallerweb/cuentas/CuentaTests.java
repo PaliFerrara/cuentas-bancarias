@@ -7,7 +7,7 @@ public class CuentaTests {
 
 	@Test
 	public void queVerifiqueLaConsigna() {
-		CuentaSueldo cuenta = new CuentaSueldo();
+		CajaAhorros cuenta = new CajaAhorros();
 		cuenta.depositar(4000.0);
 
 		Assert.assertEquals(
@@ -23,7 +23,7 @@ public class CuentaTests {
 
 	@Test(expected=CuentaBancariaException.class)
 	public void queVerifiqueLaConsignaException() {
-		CuentaSueldo cuenta = new CuentaSueldo();
+		CajaAhorros cuenta = new CajaAhorros();
 		cuenta.depositar(3500.0);
 
 		cuenta.extraer(4000.0);

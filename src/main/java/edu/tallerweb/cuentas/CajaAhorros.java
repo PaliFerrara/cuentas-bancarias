@@ -8,9 +8,9 @@ public class CajaAhorros extends AbstractCuenta {
 
 	public void depositar(final Double monto) throws CuentaBancariaException {
 
-		if	(monto < 0) {
+		if	(monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-		 }
+		}
 		else {
 		this.setSaldo(this.getSaldo() + monto);
 		}
@@ -18,10 +18,10 @@ public class CajaAhorros extends AbstractCuenta {
 
 	public void extraer(final Double monto) throws CuentaBancariaException {
 
-		if (monto > this.getSaldo() || monto < 0) {
+		if (monto > this.getSaldo() || monto < 0.0) {
 
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-												  }
+		}
 		else {
 
 			extraccionNumero++;
