@@ -38,7 +38,7 @@ public class CajaAhorros extends AbstractCuenta {
 		else {
 
 			extraccionNumero++;
-		if (extraccionNumero >= extraccionNumeroMaximo) {
+		if (extraccionNumero > extraccionNumeroMaximo) {
 			this.setSaldo(this.getSaldo() - costoExtraccion);
 		}
 		this.setSaldo(this.getSaldo() - monto);

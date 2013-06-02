@@ -69,9 +69,9 @@ public class CuentaCorriente  extends AbstractCuenta {
 
 				this.setDeuda((monto - this.getSaldo()) * this.porcentaje + (monto - this.getSaldo()));
 
+			}
 		}
-		}
-		}
+	}
 	/*public Double getSaldo() {
 
 		return this.getSaldo();
