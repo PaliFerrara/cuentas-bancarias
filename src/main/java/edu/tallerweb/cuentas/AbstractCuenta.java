@@ -8,7 +8,7 @@ package edu.tallerweb.cuentas;
  */
 public abstract class AbstractCuenta {
 	private Double saldo = 0.0;
-	private Double monto = 0.0;
+	private Double monto;
 
 	public abstract void depositar(final Double monto);
 	public abstract void extraer(final Double monto);
