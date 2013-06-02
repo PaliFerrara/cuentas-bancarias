@@ -15,7 +15,7 @@ public class CajaAhorros extends AbstractCuenta {
 	 * No hay reglas adicionales para el depósito
 	 * @param monto a depositar
 	 */
-	public void depositar(final Double monto) throws CuentaBancariaException {
+	public void depositar(final Double monto) {
 
 		if	(monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
