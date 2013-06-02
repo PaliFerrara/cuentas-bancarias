@@ -1,5 +1,11 @@
 package edu.tallerweb.cuentas;
-
+/**
+ * Modela el concepto de Cuenta. Esta clase abstracta sirve
+ * como base para una posible jerarquía (si fuese necesaria)
+ *
+ * Es probable que la tarea se facilite otorgando una imple-
+ * mentación a los métodos proporcionados.
+ */
 public abstract class AbstractCuenta {
 	private Double saldo = 0.0;
 	private Double monto = 0.0;
