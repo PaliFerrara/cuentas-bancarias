@@ -30,7 +30,7 @@ public class CajaAhorros extends AbstractCuenta {
 	 */
 	public void extraer(final Double monto) {
 
-		if (monto > this.getSaldo() || monto < 0.0) {
+		if (monto > this.getSaldo() || monto < 0.0 || (extraccionNumero > extraccionNumeroMaximo && monto <= 0.0)) {
 
 			throw new CuentaBancariaException("error con el monto de la transaccion");
 		} else {

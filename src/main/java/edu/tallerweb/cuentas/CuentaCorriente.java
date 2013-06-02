@@ -19,7 +19,6 @@ package edu.tallerweb.cuentas;
 public class CuentaCorriente  extends AbstractCuenta {
 
 	private final Double descubiertoTotal = 0.0;
-	private Double saldototal = 0.0;
 	private Double deuda = 0.0;
 	private final Double porcentaje = 0.05;
 	/**
