@@ -19,5 +19,12 @@ public abstract class AbstractCuenta {
 	public void setMonto(Double monto) {
 		this.monto = monto;
 	}
-
+	/**
+	 * Agrega a la cuenta el monto determinado
+	 * @param monto a depositar
+	 */
+	/**
+	 * Retira de la cuenta el monto determinado
+	 * @param monto a extraer
+	 */
 }
