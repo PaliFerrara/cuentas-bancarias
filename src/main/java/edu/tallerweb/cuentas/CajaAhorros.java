@@ -32,8 +32,7 @@ public class CajaAhorros extends AbstractCuenta {
 		this.extraccionNumero++;
 
 		if (monto < 0.0) {
-			throw new CuentaBancariaException(
-					"Esta intentando retirar un monto negativo.");
+			throw new CuentaBancariaException("error con el monto de la transaccion");
 		} else {
 
 			if (this.getSaldo() > monto) {
@@ -42,25 +41,11 @@ public class CajaAhorros extends AbstractCuenta {
 					this.setSaldo(this.getSaldo() - costoExtraccion);
 				}
 			} else {
-				throw new CuentaBancariaException(
-						"Esta intentando extraer mas dinero del que dispone en su Caja de Ahorros");
+				throw new CuentaBancariaException("error con el monto de la transaccion");
 			}
 		}
 	}
-	/*public void extraer(final Double monto) {
-
-		if (monto > this.getSaldo() || monto < 0.0) {
-
-			throw new CuentaBancariaException("error con el monto de la transaccion");
-		} else {
-
-			extraccionNumero++;
-		if (extraccionNumero > extraccionNumeroMaximo) {
-			this.setSaldo(this.getSaldo() - costoExtraccion);
-		}
-		this.setSaldo(this.getSaldo() - monto);
-	}
-	}*/
+	
 	/**
 	 * Permite saber el saldo de la cuenta
 	 * @return el saldo de la cuenta
