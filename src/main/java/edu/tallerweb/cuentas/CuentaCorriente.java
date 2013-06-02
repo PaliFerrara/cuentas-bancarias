@@ -1,50 +1,56 @@
 package edu.tallerweb.cuentas;
 
-public class CuentaCorriente  extends AbstractCuenta{
+public class CuentaCorriente  extends AbstractCuenta {
 
-	final Double descubiertoTotal=0.0;
-	Double saldototal = 0.0;
-	Double deuda = 0.0;
-	Double porcentaje = 5.0 / 100.0;
-	
+	private final Double descubiertoTotal = 0.0;
+	private Double saldototal = 0.0;
+	private Double deuda = 0.0;
+	private Double porcentaje = 5.0 / 100.0;
+
 	public CuentaCorriente(final Double descubiertoTotal) {
-		this.saldototal = this.saldo + this.descubiertoTotal;
+		this.saldototal = this.getSaldo() + this.descubiertoTotal;
 	}
 	public void depositar(final Double monto) throws CuentaBancariaException {
-		
-		if (monto<=descubiertoTotal){
-			throw new CuentaBancariaException("El deposito no logra cubrir el descubierto");
+
+		if (monto <= descubiertoTotal || monto < 0) {
+			throw new CuentaBancariaException("error con el monto de la transaccion");
 		}
 		else {
-		
-		this.saldo = this.saldo + monto;
+
+		this.setSaldo(this.getSaldo() + monto);
 		}
 		}
 	public void extraer(final Double monto) throws CuentaBancariaException {
-		
-		if (monto>=saldototal) {
-			throw new CuentaBancariaException("Monto a extraer supera el limite de transaccion");
+
+		if (monto >= saldototal || monto < 0 ) {
+			throw new CuentaBancariaException("error con el monto de la transaccion");
 		}
-		
+
 		else {
-			if (monto<this.saldo){
-			
-			this.saldo = this.saldo - monto;
-			
-			
+			if (monto < this.getSaldo()) {
+
+			this.setSaldo(this.getSaldo() - monto);
+
+
 		}
 			else {
-				
-				this.deuda = (monto-this.saldo) * this.porcentaje + (monto - this.saldo);
-			
-		}			
+
+				this.setDeuda((monto - this.getSaldo()) * this.porcentaje + (monto - this.getSaldo()));
+
+		}
 		}
 		}
 	public Double getSaldo() {
 
-		return this.saldo;
+		return this.getSaldo();
 	}
 	public Double getDescubierto() {
 		return this.descubiertoTotal;
+	}
+	public Double getDeuda() {
+		return deuda;
+	}
+	public void setDeuda(Double deuda) {
+		this.deuda = deuda;
 	}
 }
