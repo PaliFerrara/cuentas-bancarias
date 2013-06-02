@@ -28,7 +28,7 @@ public class CuentaCorriente  extends AbstractCuenta {
 	 * @param descubiertoTotal
 	 */
 	public CuentaCorriente(final Double descubiertoTotal) {
-		this.saldototal = this.getSaldo() + this.descubiertoTotal;
+		this.setSaldo(this.getSaldo() + this.descubiertoTotal);
 	}
 	/**
 	 * Todo depósito deberá cubrir primero el descubierto,
@@ -54,7 +54,7 @@ public class CuentaCorriente  extends AbstractCuenta {
 	 */
 	public void extraer(final Double monto) {
 
-		if (monto >= saldototal || monto < 0.0) {
+		if (monto >= this.getSaldo() || monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
 		} else {
 			if (monto < this.getSaldo()) {
