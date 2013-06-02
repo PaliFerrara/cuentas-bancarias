@@ -28,7 +28,7 @@ public class CajaAhorros extends AbstractCuenta {
 	 * la quinta.
 	 * @param monto a extraer
 	 */
-	public void extraer(final Double monto) throws CuentaBancariaException {
+	public void extraer(final Double monto) {
 
 		if (monto > this.getSaldo() || monto < 0.0) {
 
@@ -36,7 +36,7 @@ public class CajaAhorros extends AbstractCuenta {
 		} else {
 
 			extraccionNumero++;
-		if (extraccionNumero > extraccionNumeroMaximo ) {
+		if (extraccionNumero > extraccionNumeroMaximo) {
 			this.setSaldo(this.getSaldo() - costoExtraccion);
 		}
 		this.setSaldo(this.getSaldo() - monto);

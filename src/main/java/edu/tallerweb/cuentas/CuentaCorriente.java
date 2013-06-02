@@ -36,7 +36,7 @@ public class CuentaCorriente  extends AbstractCuenta {
 	 * cuenta.
 	 * @param monto a depositar
 	 */
-	public void depositar(final Double monto) throws CuentaBancariaException {
+	public void depositar(final Double monto) {
 
 		if (monto <= descubiertoTotal || monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
@@ -52,7 +52,7 @@ public class CuentaCorriente  extends AbstractCuenta {
 	 * de la cuenta, más el descubierto (comisión incluída)
 	 * @param monto a extraer
 	 */
-	public void extraer(final Double monto) throws CuentaBancariaException {
+	public void extraer(final Double monto) {
 
 		if (monto >= saldototal || monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");

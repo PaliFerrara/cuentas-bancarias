@@ -7,7 +7,7 @@ package edu.tallerweb.cuentas;
  */
 public class CuentaSueldo extends AbstractCuenta {
 
-	public void depositar(final Double monto) throws CuentaBancariaException {
+	public void depositar(final Double monto) {
 
 		if	(monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
@@ -16,7 +16,7 @@ public class CuentaSueldo extends AbstractCuenta {
 		}
 	}
 
-	public void extraer(final Double monto) throws CuentaBancariaException {
+	public void extraer(final Double monto) {
 
 		if (monto > this.getSaldo() || monto < 0.0) {
 
