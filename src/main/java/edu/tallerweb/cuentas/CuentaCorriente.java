@@ -40,7 +40,7 @@ public class CuentaCorriente  extends AbstractCuenta {
 
 		if (monto <= descubiertoTotal || monto < 0.0) {
 			throw new CuentaBancariaException("error con el monto de la transaccion");
-	}
+		}
 		else {
 
 		this.setSaldo(this.getSaldo() + monto);
@@ -56,15 +56,15 @@ public class CuentaCorriente  extends AbstractCuenta {
 	public void extraer(final Double monto) throws CuentaBancariaException {
 
 		if (monto >= saldototal || monto < 0.0) {
-			throw new CuentaBancariaException("error con el monto de la transaccion");								
-	}
+			throw new CuentaBancariaException("error con el monto de la transaccion");
+		}
 
 		else {
 			if (monto < this.getSaldo()) {
 
 			this.setSaldo(this.getSaldo() - monto);
 
-		}
+			}
 			else {
 
 				this.setDeuda((monto - this.getSaldo()) * this.porcentaje + (monto - this.getSaldo()));
@@ -82,7 +82,7 @@ public class CuentaCorriente  extends AbstractCuenta {
 	public Double getDeuda() {
 		return deuda;
 	}
-	public void setDeuda(Double deuda) {
+	public void setDeuda(final Double deuda) {
 		this.deuda = deuda;
 	}
 }

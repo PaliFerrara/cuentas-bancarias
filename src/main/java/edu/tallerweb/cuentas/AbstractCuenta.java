@@ -10,13 +10,13 @@ public abstract class AbstractCuenta {
 	public Double getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(Double saldo) {
+	public void setSaldo(final Double saldo) {
 		this.saldo = saldo;
 	}
 	public Double getMonto() {
 		return monto;
 	}
-	public void setMonto(Double monto) {
+	public void setMonto(final Double monto) {
 		this.monto = monto;
 	}
 	/**
